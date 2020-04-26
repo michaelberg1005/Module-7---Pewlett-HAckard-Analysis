@@ -197,20 +197,26 @@ INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no);
 
 --Create table for retirement by title - table 1 of challenge
-SELECT ri.emp_no,
- ri.first_name,
- ri.last_name,
+SELECT ei.emp_no,
+ ei.first_name,
+ ei.last_name,
  titles.title,
+ titles.to_date,
  titles.from_date,
  salaries.salary
 INTO retirement_by_title
-FROM retirement_info AS ri
+FROM employees AS ei
 INNER JOIN titles
-ON (ri.emp_no = titles.emp_no)
+ON (ei.emp_no = titles.emp_no)
 INNER JOIN salaries
-ON (ri.emp_no = salaries.emp_no);
+ON (ei.emp_no = salaries.emp_no)
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31')
+AND (titles.to_date = '9999-01-01');
 
 SELECT * FROM retirement_by_title;
+
+SELECT COUNT(emp_no) FROM retirement_by_title;
 
 DROP TABLE retirement_data CASCADE;
 
@@ -219,21 +225,25 @@ SELECT emp_no,
 	first_name,
 	last_name,
 	from_date,
-	title,
-	salary
+	title
 INTO retirement_data
 FROM
   (SELECT emp_no, 
 	first_name,
 	last_name,
 	from_date,
-	title, salary,
+	title,
    ROW_NUMBER() OVER 
 	(PARTITION BY (emp_no) 
 	 ORDER BY from_date DESC) rn
    FROM retirement_by_title
   ) tmp WHERE rn = 1
   ORDER BY emp_no;
+  
+SELECT COUNT(emp_no) FROM retirement_data;
+
+
+DROP TABLE retirement_title CASCADE;
 
 SELECT Count(emp_no),title
 INTO retirement_title
@@ -264,3 +274,6 @@ FROM mentorship
 LEFT JOIN titles
 ON mentorship.emp_no = titles.emp_no
 WHERE titles.to_date = ('9999-01-01');
+
+
+

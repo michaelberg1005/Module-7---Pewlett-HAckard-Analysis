@@ -1,8 +1,8 @@
 # Module-7---Pewlett-HAckard-Analysis
 Module 7 UCB work
 ## Summary of Results
-1.) Based on my analysis of Pewllettt Hackard employees, theree are 41,380 employees who were born between 1/11952 amd 12/31/1955, who are reitiring soon. Within that, there are 501 Assistant Engineers, 4,692 Engineers, 2 Managers, 15,600 Senior Engineers, 14,735 Senior Staff, 3,837 Staff and 2,013 Technique Leaders who are going to be retiring. Please see csv table titled "retirement_by_title_challenge_table_1" for a cleaner view of this data.
-2.) There are 1,549 employees who are availble for the mentorship role, based on the criteria of being born in 1965. Please see csv table titled "mentorship_list_challenge_table_2" for complete details of the employees availble for the mentorship role.
+1. Based on my analysis of Pewllettt Hackard employees, theree are 41,380 employees who were born between 1/11952 amd 12/31/1955, who are reitiring soon. Within that, there are 501 Assistant Engineers, 4,692 Engineers, 2 Managers, 15,600 Senior Engineers, 14,735 Senior Staff, 3,837 Staff and 2,013 Technique Leaders who are going to be retiring. Please see csv table titled "retirement_by_title_challenge_table_1" for a cleaner view of this data.
+2. There are 1,549 employees who are availble for the mentorship role, based on the criteria of being born in 1965. Please see csv table titled "mentorship_list_challenge_table_2" for complete details of the employees availble for the mentorship role.
 
 PLEASE SEE "schema.sql" for technical code behind table creation for items 1 and 2, as well as the queries used to help filter the data.
 

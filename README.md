@@ -11,3 +11,4 @@ One recommendation for further analysis on this data set would be to filter the 
 
 ## ERD Schema Map
 Please see below for my ERD schema map i used to help filter the data of Pewlett Hackard:
+-- ![ERD Schema Map Pewlett Hackard](https://github.com/michaelberg1005/Module-7---Pewlett-HAckard-Analysis/blob/[branch]/image.jpg?raw=true)
